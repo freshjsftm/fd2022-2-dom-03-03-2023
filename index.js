@@ -1,20 +1,15 @@
 "use strict";
 
-function logMessage() {
-  console.log("message: click");
-}
+const db = [
+  "https://media-cdn.tripadvisor.com/media/photo-s/0d/df/c1/45/house-of-sea-and-sun.jpg",
+  "https://images.unsplash.com/photo-1503756234508-e32369269deb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8c2VhfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
+  "https://images.nature.com/original/magazine-assets/d41586-022-02899-y/d41586-022-02899-y_23462194.jpg",
+  "https://www.royalcaribbean.com/blog/wp-content/uploads/2021/06/iStock-1170804921-1650x1100.jpg"
+];
 
-const [button] = document.getElementsByTagName("button");
-button.addEventListener("click", logMessage);
-const test = document.getElementById("test");
-//const test = document.querySelector('#test');
-console.log(test);
-const [input] = document.getElementsByName("input");
-console.log(input);
-const lis = document.getElementsByClassName("item");
-console.log(lis);
+const image = document.querySelector(".slide>img");
+image.src = db[0]
 
-const h1 = document.querySelector("h1");
-console.log(h1);
-const ps = document.querySelectorAll("p");
-console.log(ps);
+const [prevBtn, nextBtn] = document.querySelectorAll(
+  ".slider-container button"
+);
