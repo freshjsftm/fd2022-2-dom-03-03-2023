@@ -7,9 +7,24 @@ const db = [
   "https://www.royalcaribbean.com/blog/wp-content/uploads/2021/06/iStock-1170804921-1650x1100.jpg"
 ];
 
+const slider = new Slider(db);
+
 const image = document.querySelector(".slide>img");
-image.src = db[0]
+
+function updateView(){
+  image.src = slider.currentSlide;
+}
+updateView();
 
 const [prevBtn, nextBtn] = document.querySelectorAll(
   ".slider-container button"
 );
+
+prevBtn.addEventListener('click', ()=>{
+  slider.currentIndex = slider.prev();
+  updateView();
+})
+nextBtn.addEventListener('click', ()=>{
+  slider.currentIndex = slider.next();
+  updateView();
+})
