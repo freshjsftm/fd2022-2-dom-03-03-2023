@@ -28,10 +28,10 @@ class Slider {
   get currentSlide() {
     return this._collection[this._currentIndex];
   }
-  next() {
+  get nextIndex() {
     return (this._currentIndex + 1) % this.collection.length;
   }
-  prev() {
+  get prevIndex() {
     return (this._currentIndex - 1 + this.collection.length) % this.collection.length;
   }
 }
