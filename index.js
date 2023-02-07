@@ -2,12 +2,13 @@
 
 const uniq = document.getElementById("uniq");
 
-const attrTitle = document.createAttribute("title");
-attrTitle.value = "button uniq";
+//uniq.disabled = true
 
-console.log(attrTitle)
+//uniq.innerText = "new text"
+//uniq.outerText = "new text"
 
-uniq.setAttributeNode(attrTitle)
-
-// uniq.setAttribute('title', 'qweqwe')
-// uniq.setAttribute('title', '11111')
+uniq.addEventListener('click', (event)=>{
+  console.log(uniq.innerText)
+  console.log(uniq.outerText)
+  console.log(uniq.textContent)
+})
