@@ -50,20 +50,16 @@ nextBtn.addEventListener("click", handlerBtnSlider("next"));
 
 const uniq = document.getElementById("uniq");
 
-uniq.addEventListener("click", handlerBtnUniq);
-uniq.addEventListener("click", logValue);
-uniq.addEventListener("click", showBtn);
-uniq.addEventListener('click', ()=>alert(111), {once:true})
-// uniq.removeEventListener("click", handlerBtnUniq);
+uniq.addEventListener("myEvent123", handlerBtnUniq);
+// uniq.click()
+
+if(Math.random()>0.5){
+  uniq.dispatchEvent(new CustomEvent('myEvent123'));
+}
+
 
 function handlerBtnUniq() {
-  console.log("handlerBtnUniq");
+  console.log("handlerBtnUniq myEvent123");
   uniq.removeEventListener("click", handlerBtnUniq);
 }
-function logValue() {
-  console.log("logValue");
-  uniq.removeEventListener('click', showBtn);
-}
-function showBtn() {
-  console.log("showBtn");
-}
+
