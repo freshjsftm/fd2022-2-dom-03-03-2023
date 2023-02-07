@@ -1,14 +1,16 @@
 "use strict";
 
-const uniq = document.getElementById("uniq");
+const handlerBtn = ({
+  target: {
+    parentElement: parent,
+    dataset: { bgColor },
+  },
+}) => {
+  parent.style.backgroundColor = bgColor;
+};
 
-//uniq.disabled = true
+const btns = document.querySelectorAll("#wrapper>button");
 
-//uniq.innerText = "new text"
-//uniq.outerText = "new text"
-
-uniq.addEventListener('click', (event)=>{
-  console.log(uniq.innerText)
-  console.log(uniq.outerText)
-  console.log(uniq.textContent)
-})
+for (const btn of btns) {
+  btn.addEventListener("click", handlerBtn);
+}
