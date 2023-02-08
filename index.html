@@ -5,22 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM</title>
-    <script defer src="./assets/js/sandbox.js"></script>
-    <script defer src="./assets/js/Slider.js"></script>
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <!-- <script defer src="./assets/js/sandbox.j
+      s"></script>
+    <script defer src="./assets/js/Slider.js"></script> -->
+    <script defer src="./assets/js/data.js"></script>
     <script defer src="./index.js"></script>
-    <style>
-      #wrapper{
-        padding: 20px;
-      }
-    </style>
   </head>
   <body>
-    <div id="wrapper">
-      <button data-bg-color="red" data-number="1">червоний</button>
-      <button data-bg-color="blue" data-number="1">синій</button>
-      <button data-bg-color="pink" data-number="1">рожевий</button>
-      <button data-bg-color="teal" data-number="1">зелений</button>
-      <button data-bg-color="orange" data-number="1">помаранчовий</button>
-    </div>
+    <section class="container">
+      <h1>Actors</h1>
+      <ul class="cardsContainer" id="cardsContainer">
+        <!-- <li class="cardWrapper">
+          <article class="card">
+            <div class="cardImageWrapper">
+              <div class="initials">TC</div>
+              <img
+                src="https://www.filmibeat.com/img/popcorn/profile_photos/tom-cruise-20190610151455-4602.jpg"
+                alt="Tom Cruise"
+                class="cardImage"
+              />
+            </div>
+            <h2 class="cardName oneLine">Tom Cruise</h2>
+            <p class="cardDescription oneLine">July 3, 1962</p>
+          </article>
+        </li> -->
+      </ul>
+    </section>
   </body>
 </html>
