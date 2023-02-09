@@ -1,5 +1,4 @@
 /// handlers
-
 function handleImageError({ target }) {
   target.remove();
 }
@@ -29,7 +28,7 @@ function stringToColour(str) {
  * @param {object} options
  * @param {[string]} options.classNames[]
  * @param {object} options.attributes  {'src':path, 'alt':name}
- * @param {object} options.styles
+ * @param {object} options.styles {styleName:styleValue}
  * @param {object} options.listeners
  * @returns
  */

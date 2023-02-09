@@ -26,6 +26,10 @@ img {
   display: flex;
   align-items: flex-end;
   margin: 1em;
+  transition: transform 1s;
+}
+.cardWrapper:hover{
+  transform: scale(1.1);
 }
 .card {
   border: 1px solid #ccc;
