@@ -1,24 +1,20 @@
 "use strict";
 
-//literal
-const pattern1 = /\b\w{2}\b/gi;
-//constructor
-const pattern2 = new RegExp("\\b\\d+\\b", "gi");
+const pattern1 = /\b(?:\w*)(ay)\b/gi;
 
-const str = `Yesterday all my troubles 4 seemed so 5 far away.
+const str = `Yesterday all my troubles seemed so far away.
 Now it looks as though they're here to stay.
 Oh, I believe in yesterday.`;
 
 if (pattern1.test(str)) {
-  console.log("found", ...str.matchAll(pattern1));
+  console.log("found");
+  const newStr = str.replaceAll(pattern1, '$1****')
+  console.log(newStr)
+  console.log(str)
 } else {
   console.log("not found");
 }
-if (pattern2.test(str)) {
-  console.log("found", ...str.matchAll(pattern2));
-} else {
-  console.log("not found");
-}
+
 
 /*
 .   будь який один символ
