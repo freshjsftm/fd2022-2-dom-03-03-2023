@@ -1,40 +1,37 @@
 "use strict";
-const logins = [];
-const list = document.getElementById("list"); //render
-const form = document.getElementById("form");
-const login = form.login;
-login.focus();
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const {
-    target,
-    target: { login },
-  } = event;
-  const newLogin = login.value.trim();
-  if (newLogin && logins.includes(newLogin) === false) {
-    logins.push(newLogin);
-    list.append(createLiLogin(newLogin));
-  }
-  target.reset();
-});
 
-function createLiLogin(newLogin) {
-  return createElement(
-    "li",
-    {},
-    createElement("span", {}, newLogin),
-    createElement(
-      "button",
-      {
-        styles: { color: "red", fontWeight: "bolder" },
-        listeners: {
-          click: ({ target: { parentElement, previousElementSibling } }) => {
-            parentElement.remove();
-            logins.splice(logins.indexOf(previousElementSibling.innerText), 1);
-          },
-        },
-      },
-      "X"
-    )
-  );
+//literal
+const pattern1 = /\b\w{2}\b/gi;
+//constructor
+const pattern2 = new RegExp("\\b\\d+\\b", "gi");
+
+const str = `Yesterday all my troubles 4 seemed so 5 far away.
+Now it looks as though they're here to stay.
+Oh, I believe in yesterday.`;
+
+if (pattern1.test(str)) {
+  console.log("found", ...str.matchAll(pattern1));
+} else {
+  console.log("not found");
 }
+if (pattern2.test(str)) {
+  console.log("found", ...str.matchAll(pattern2));
+} else {
+  console.log("not found");
+}
+
+/*
+.   будь який один символ
+[]  будь який один з переліку 
+[^]  будь який один окрім  переліку 
+
+{from, to?} 
+
+\d - одна будь яка цифра
+\w - один будь який символ слова
+\s - один будь який пробільний символ 
+
+*  {0, infinity}
++  {1, infinity}
+?  {0, 1}
+*/
