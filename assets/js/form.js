@@ -4,6 +4,23 @@ const list = document.getElementById("list"); //render
 const form = document.getElementById("form");
 const login = form.login;
 login.focus();
+//Brad Pitt
+const submitBtn = document.getElementById("submitBtn");
+submitBtn.disabled = true;
+
+//Прізвище І.П.
+
+//const patternFullName = /^([A-Z][a-z]+( [A-Z][a-z]+))$/;
+//const patternFullName = /^[A-Z][a-z]{2,15} [A-Z][a-z]{2,15}$/;
+const patternFullName = /^[А-ЯІЇЄ][а-яіїє]{2,16} ([А-ЯІЇЄ]\.){2}$/;
+//blur  change  input  paste copy select cut  keyup  keydown
+login.addEventListener("change", (event) => {
+  console.log(event.type);
+  if (patternFullName.test(login.value.trim())) {
+    submitBtn.disabled = false;
+  }
+});
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const {
@@ -11,7 +28,7 @@ form.addEventListener("submit", (event) => {
     target: { login },
   } = event;
   const newLogin = login.value.trim();
-  if (newLogin && logins.includes(newLogin) === false) {
+  if (patternFullName.test(newLogin) && logins.includes(newLogin) === false) {
     logins.push(newLogin);
     list.append(createLiLogin(newLogin));
   }

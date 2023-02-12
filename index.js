@@ -1,19 +1,19 @@
 "use strict";
 
-const pattern1 = /\b(?:\w*)(ay)\b/gi;
+// const pattern1 = /\b(?:\w*)(ay)\b/gi;
 
-const str = `Yesterday all my troubles seemed so far away.
-Now it looks as though they're here to stay.
-Oh, I believe in yesterday.`;
+// const str = `Yesterday all my troubles seemed so far away.
+// Now it looks as though they're here to stay.
+// Oh, I believe in yesterday.`;
 
-if (pattern1.test(str)) {
-  console.log("found");
-  const newStr = str.replaceAll(pattern1, '$1****')
-  console.log(newStr)
-  console.log(str)
-} else {
-  console.log("not found");
-}
+// if (pattern1.test(str)) {
+//   console.log("found");
+//   const newStr = str.replaceAll(pattern1, '$1****')
+//   console.log(newStr)
+//   console.log(str)
+// } else {
+//   console.log("not found");
+// }
 
 
 /*
