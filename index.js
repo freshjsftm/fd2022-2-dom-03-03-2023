@@ -1,33 +1,37 @@
 "use strict";
 
-// const pattern1 = /\b(?:\w*)(ay)\b/gi;
+const btn = document.getElementById("btn");
 
-// const str = `Yesterday all my troubles seemed so far away.
-// Now it looks as though they're here to stay.
-// Oh, I believe in yesterday.`;
+//написати функцію, яка буде послідовно через 1 секунду
+//виводити в консоль числа від 0 до 10
+// setTimeout - recursion
+// setInterval - condition
 
-// if (pattern1.test(str)) {
-//   console.log("found");
-//   const newStr = str.replaceAll(pattern1, '$1****')
-//   console.log(newStr)
-//   console.log(str)
-// } else {
-//   console.log("not found");
-// }
+function counterInterval(n = 10) {
+  let count = 0;
+  return function () {
+    const idInterval = setInterval(() => {
+      console.log(count++);
+      for (let i = 0; i < 1000000000; i++) {}
+      if (count >= n) {
+        clearInterval(idInterval);
+        ///console.timeEnd("marker");
+      }
+    }, 1000);
+  };
+}
+const counter1 = counterInterval();
+// console.time('marker')
+// counter1();
 
-
-/*
-.   будь який один символ
-[]  будь який один з переліку 
-[^]  будь який один окрім  переліку 
-
-{from, to?} 
-
-\d - одна будь яка цифра
-\w - один будь який символ слова
-\s - один будь який пробільний символ 
-
-*  {0, infinity}
-+  {1, infinity}
-?  {0, 1}
-*/
+function counterTimout(count = 0) {
+  console.log(count);
+  const idTimeout = setTimeout(()=>counterTimout(count + 1), 1000);
+  if (count >= 9) {
+    clearTimeout(idTimeout);
+    console.timeEnd("marker");
+    return;
+  }
+}
+console.time('marker')
+counterTimout();
