@@ -18,5 +18,15 @@
     "isAdult": true,
     "ukrainePasport": "pasport",
     "bday": { "year": 1983, "month": 12 }
+  },
+  {
+    "id": 3,
+    "firstName": "Tom",
+    "lastName": "Croose",
+    "age": 65,
+    "children": ["Max"],
+    "isAdult": true,
+    "ukrainePasport": "pasport",
+    "bday": { "year": 1983, "month": 12 }
   }
 ]
