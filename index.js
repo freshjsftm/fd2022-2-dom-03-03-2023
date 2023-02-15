@@ -1,9 +1,17 @@
 "use strict";
 
-const myPromise1 = new Promise(executor);
+// setTimeout(callback, 100)
+// timeout(200).then(callback)
 
-function executor(resolve, reject) {
-  Math.random() > 0.5 ? resolve() : reject();
+function timeout(time){
+  return new Promise((resolve, reject)=>{
+    setTimeout(resolve, time);
+  })
 }
 
-console.log(myPromise1);
+timeout(1500)
+  .then(()=>{console.log('resolve')})
+  .catch(()=>{console.log('reject')})
+  .finally(()=>{console.log('finally')})
+
+  
