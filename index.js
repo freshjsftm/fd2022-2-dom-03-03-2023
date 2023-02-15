@@ -1,31 +1,12 @@
 "use strict";
 
 fetch("./assets/js/data.json")
-  .then((response)=>{return response.json()})
-  .then((data)=>{console.table(data)})
+  .then((response)=>response.json())
+  .then((data)=>{
+    data.forEach((user)=>{
+      console.log(user.lastName, user.age)
+    })
+  })
+  .catch((error)=>{console.log(error)})
+  .finally(()=>{console.log('finally')})
 
-//const promise = fetch("./assets/js/data.json");
-
-// promise.then(
-//   (response) => {
-//     const responsePromise = response.json();
-//     responsePromise.then(
-//       (data) => {
-//         console.table(data);
-//       },
-//       () => {
-//         console.log("error responsePromise");
-//       }
-//     );
-//   },
-//   () => {
-//     console.log("error promise");
-//   }
-// );
-
-// const responsePromise = promise.then((response) => {
-//   return response.json();
-// });
-// responsePromise.then((data) => {
-//   console.table(data);
-// });
