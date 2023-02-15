@@ -1,12 +1,9 @@
 "use strict";
 
-fetch("./assets/js/data.json")
-  .then((response)=>response.json())
-  .then((data)=>{
-    data.forEach((user)=>{
-      console.log(user.lastName, user.age)
-    })
-  })
-  .catch((error)=>{console.log(error)})
-  .finally(()=>{console.log('finally')})
+const myPromise1 = new Promise(executor);
 
+function executor(resolve, reject) {
+  Math.random() > 0.5 ? resolve() : reject();
+}
+
+console.log(myPromise1);
